@@ -1,0 +1,15 @@
+[Container]
+ContainerName=forgejo-postgres
+Environment=USER_UID=1000
+Environment=USER_GID=1000
+Image=docker.io/library/postgres
+Network=forgejo.network
+PublishPort=5432:5432
+Volume=forgejo-postgres-data:/var/lib/postgresql/data
+Environment=POSTGRES_PASSWORD=password
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
