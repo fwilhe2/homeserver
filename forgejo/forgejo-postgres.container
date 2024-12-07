@@ -6,7 +6,9 @@ Image=docker.io/library/postgres
 Network=forgejo.network
 PublishPort=5432:5432
 Volume=forgejo-postgres-data:/var/lib/postgresql/data
-Environment=POSTGRES_PASSWORD=password
+Environment=POSTGRES_USER=forgejo
+Environment=POSTGRES_PASSWORD=forgejo
+Environment=POSTGRES_db=forgejo
 
 [Service]
 Restart=always
